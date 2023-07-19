@@ -1,7 +1,6 @@
 'use client'
-import React, { FunctionComponent, useEffect, useState } from 'react'
+import React, { FunctionComponent, useState } from 'react'
 import Search from '../Search'
-import Image from 'next/image'
 import { ISearchGiphy } from '@/types/components/SearchGiphy'
 import { GiphyFetch } from '@giphy/js-fetch-api'
 import Loader from '../Loader'
@@ -13,7 +12,7 @@ const SearchGiphy: FunctionComponent<ISearchGiphy> = ({ datas }) => {
   const [giphyDatas, setGiphyDatas] = useState(datas)
   const [loading, setLoading] = useState<boolean>(false)
 
-  const gf = new GiphyFetch('dc6kYmlEbN8Asw5bbJflIqSABc3wYlIu')
+  const gf = new GiphyFetch(process.env.NEXT_PUBLIC_API_KEY as string)
 
   const getDatas = async (search: string = 'trend') => {
     try {

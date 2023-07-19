@@ -1,12 +1,9 @@
 import GiphyList from '@/components/GiphyList'
 import NotFound from '@/components/NotFound'
-import SearchGiphy from '@/components/Pages/SearchGiphy'
-import { IGiphy } from '@/types/Giphy'
 import { GiphyFetch } from '@giphy/js-fetch-api'
-import Image from 'next/image'
 
 export default async function Ironman() {
-  const gf = new GiphyFetch('dc6kYmlEbN8Asw5bbJflIqSABc3wYlIu')
+  const gf = new GiphyFetch(process.env.NEXT_PUBLIC_API_KEY as string)
 
   const getDatas = async () => {
     try {

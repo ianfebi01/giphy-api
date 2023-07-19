@@ -1,10 +1,8 @@
 import { GiphyFetch } from '@giphy/js-fetch-api'
-import Image from 'next/image'
-import Search from '@/components/Search'
 import SearchGiphy from '@/components/Pages/SearchGiphy'
 
 export default async function SearchPage() {
-  const gf = new GiphyFetch('dc6kYmlEbN8Asw5bbJflIqSABc3wYlIu')
+  const gf = new GiphyFetch(process.env.NEXT_PUBLIC_API_KEY as string)
 
   const gg = async (search: string) => {
     const { data: gifs } = await gf.search(search, {
