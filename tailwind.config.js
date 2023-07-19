@@ -7,10 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        // ...
+        primary: '#55BDB3',
+        secondary: '#F0F8F8',
+        darken: '#0F2435',
+        hover: 'rgba(242, 242, 242, 0.60)',
+        // ...
+      },
+      // Shadow
+      boxShadow: {
+        gg: '0px 10px 30px 0px rgba(0, 0, 0, 0.10)',
       },
     },
   },
